@@ -987,7 +987,7 @@ class WanModel(ModelMixin, ConfigMixin):
         if blocks_to_swap != -1 and vace_blocks_to_swap == 0:
             vace_blocks_to_swap = 1
 
-        if vace_blocks_to_swap > 0 and self.vace_layers is not None:
+        if vace_blocks_to_swap is not None and vace_blocks_to_swap > 0 and self.vace_layers is not None:
             self.vace_blocks_to_swap = vace_blocks_to_swap
 
             for b, block in tqdm(enumerate(self.vace_blocks), total=len(self.vace_blocks), desc="Initializing vace block swap"):
